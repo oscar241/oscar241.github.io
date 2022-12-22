@@ -11,9 +11,9 @@ password:<input type="password" name="pwd">
 </form>
 <h2>Creat new acount</h2>
 <form>
-Firstname:<input type="text"name="firstname"><br><br>
-lastname:<input type="text"name="lastname"><br><br>
-email:<input type="text"name="mail">
+<input type="text" name="First Name">
+<input type="text" name="Last Nmae">
+<input type="text" name="Email">
 </form>
 <form>
 <input type="radio" name="sex" value="male">male<br><br>
