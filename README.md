@@ -1,69 +1,69 @@
-<canvas id="gc" width="400" height="400"></canvas>
-<script>
-window.onload=function() {
-	canv=document.getElementById("gc");
-	ctx=canv.getContext("2d");
-	document.addEventListener("keydown",keyPush);
-	setInterval(game,1000/15);
-}
-px=py=10;
-gs=tc=20;
-ax=ay=15;
-xv=yv=0;
-trail=[];
-tail = 5;
-function game() {
-	px+=xv;
-	py+=yv;
-	if(px<0) {
-		px= tc-1;
-	}
-	if(px>tc-1) {
-		px= 0;
-	}
-	if(py<0) {
-		py= tc-1;
-	}
-	if(py>tc-1) {
-		py= 0;
-	}
-	ctx.fillStyle="black";
-	ctx.fillRect(0,0,canv.width,canv.height);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Beautiful Selling Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-	ctx.fillStyle="lime";
-	for(var i=0;i<trail.length;i++) {
-		ctx.fillRect(trail[i].x*gs,trail[i].y*gs,gs-2,gs-2);
-		if(trail[i].x==px && trail[i].y==py) {
-			tail = 5;
-		}
-	}
-	trail.push({x:px,y:py});
-	while(trail.length>tail) {
-	trail.shift();
-	}
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
 
-	if(ax==px && ay==py) {
-		tail++;
-		ax=Math.floor(Math.random()*tc);
-		ay=Math.floor(Math.random()*tc);
-	}
-	ctx.fillStyle="red";
-	ctx.fillRect(ax*gs,ay*gs,gs-2,gs-2);
-}
-function keyPush(evt) {
-	switch(evt.keyCode) {
-		case 37:
-			xv=-1;yv=0;
-			break;
-		case 38:
-			xv=0;yv=-1;
-			break;
-		case 39:
-			xv=1;yv=0;
-			break;
-		case 40:
-			xv=0;yv=1;
-			break;
-	}
-}
-</script>
+        section {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Selling Website</h1>
+        <p>Welcome to our beautiful collection!</p>
+    </header>
+
+    <section>
+        <h2>Featured Products</h2>
+
+        <div class="product">
+            <img src="product1.jpg" alt="Product 1">
+            <h3>Product 1</h3>
+            <p>Description of Product 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Price: $XX.XX</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="product2.jpg" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>Description of Product 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Price: $XX.XX</p>
+            <button>Add to Cart</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
+</body>
+</html>
